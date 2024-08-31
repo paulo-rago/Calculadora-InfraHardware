@@ -41,8 +41,8 @@ int main() {
             base8(numero);
             bcd(numero);
             break;
-        // case 2:
-            // complemento2(numero);
+        case 2:
+            complemento2(numero);
             break;
         // case 3:
            // decFloat(numero_real);
@@ -115,6 +115,19 @@ void bcd(int numero) {
         }
         printf(" ");
         numero = numero / 10;
+    }
+    printf("\n");
+}
+
+void complemento2(int numero) {
+    int bits[16];
+    for (int i = 0; i < 16; i++) {
+        bits[i] = (numero >> i) & 1;
+    }
+
+    printf("Complemento de 2 de %d com 16 bits:\n", numero);
+    for (int i = 15; i >= 0; i--) {
+        printf("%d", bits[i]);
     }
     printf("\n");
 }
